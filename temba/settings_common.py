@@ -327,23 +327,23 @@ DEFAULT_PLAN = TOPUP_PLAN
 # -----------------------------------------------------------------------------------
 BRANDING = {
     "rapidpro.io": {
-        "slug": "rapidpro",
-        "name": "RapidPro",
+        "slug": "flowartisan",
+        "name": "Flowartisan",
         "org": "UNICEF",
         "colors": dict(primary="#0c6596"),
-        "styles": ["brands/rapidpro/font/style.css"],
+        "styles": ["brands/flowartisan/font/style.css"],
         "default_plan": TOPUP_PLAN,
         "welcome_topup": 1000,
-        "email": "join@rapidpro.io",
-        "support_email": "support@rapidpro.io",
-        "link": "https://app.rapidpro.io",
+        "email": "join@flowartisan.io",
+        "support_email": "support@mista.io",
+        "link": "https://flowartisan.com",
         "api_link": "https://api.rapidpro.io",
-        "docs_link": "http://docs.rapidpro.io",
-        "domain": "app.rapidpro.io",
-        "ticket_domain": "tickets.rapidpro.io",
-        "favico": "brands/rapidpro/rapidpro.ico",
-        "splash": "brands/rapidpro/splash.jpg",
-        "logo": "brands/rapidpro/logo.png",
+        "docs_link": "http://docs.flowartisan.com",
+        "domain": "flowartisan.com",
+        "ticket_domain": "tickets.mista.io",
+        "favico": "brands/flowartisan/rapidpro.ico",
+        "splash": "brands/flowartisan/splash.jpg",
+        "logo": "brands/flowartisan/logo.png",
         "allow_signups": True,
         "flow_types": ["M", "V", "B", "S"],  # see Flow.FLOW_TYPES
         "location_support": True,
@@ -352,11 +352,11 @@ BRANDING = {
         "welcome_packs": [dict(size=5000, name="Demo Account"), dict(size=100000, name="UNICEF Account")],
         "title": _("Visually build nationally scalable mobile applications"),
         "description": _("Visually build nationally scalable mobile applications from anywhere in the world."),
-        "credits": _("Copyright &copy; 2012-2017 UNICEF, Nyaruka. All Rights Reserved."),
+        "credits": _("Copyright &copy; 2022 MISTA LLC. All Rights Reserved."),
         "support_widget": False,
     }
 }
-DEFAULT_BRAND = os.environ.get("DEFAULT_BRAND", "rapidpro.io")
+DEFAULT_BRAND = os.environ.get("DEFAULT_BRAND", "flowartisan")
 
 # -----------------------------------------------------------------------------------
 # Permission Management
@@ -434,6 +434,7 @@ PERMISSIONS = {
         "vonage_connect",
         "plan",
         "plivo_connect",
+        "whatsapp_cloud_connect",
         "profile",
         "prometheus",
         "resthooks",
@@ -644,6 +645,7 @@ GROUP_PERMISSIONS = {
         "orgs.org_vonage_connect",
         "orgs.org_plan",
         "orgs.org_plivo_connect",
+        "orgs.org_whatsapp_cloud_connect",
         "orgs.org_profile",
         "orgs.org_prometheus",
         "orgs.org_resthooks",
@@ -960,9 +962,9 @@ TEST_EXCLUDE = ("smartmin",)
 # -----------------------------------------------------------------------------------
 _default_database_config = {
     "ENGINE": "django.contrib.gis.db.backends.postgis",
-    "NAME": "temba",
-    "USER": "temba",
-    "PASSWORD": "temba",
+    "NAME": "flowartisan",
+    "USER": "flowartisan",
+    "PASSWORD": "mista",
     "HOST": "localhost",
     "PORT": "5432",
     "ATOMIC_REQUESTS": True,
@@ -1121,71 +1123,72 @@ TICKETER_TYPES = [
 ]
 
 CHANNEL_TYPES = [
-    "temba.channels.types.arabiacell.ArabiaCellType",
+    # "temba.channels.types.arabiacell.ArabiaCellType",
     "temba.channels.types.whatsapp.WhatsAppType",
-    "temba.channels.types.dialog360.Dialog360Type",
-    "temba.channels.types.zenvia_whatsapp.ZenviaWhatsAppType",
-    "temba.channels.types.twilio.TwilioType",
-    "temba.channels.types.twilio_whatsapp.TwilioWhatsappType",
-    "temba.channels.types.twilio_messaging_service.TwilioMessagingServiceType",
-    "temba.channels.types.signalwire.SignalWireType",
-    "temba.channels.types.vonage.VonageType",
+    "temba.channels.types.whatsapp_cloud.WhatsAppCloudType",
+    # "temba.channels.types.dialog360.Dialog360Type",
+    # "temba.channels.types.zenvia_whatsapp.ZenviaWhatsAppType",
+    # "temba.channels.types.twilio.TwilioType",
+    # "temba.channels.types.twilio_whatsapp.TwilioWhatsappType",
+    # "temba.channels.types.twilio_messaging_service.TwilioMessagingServiceType",
+    # "temba.channels.types.signalwire.SignalWireType",
+    # "temba.channels.types.vonage.VonageType",
     "temba.channels.types.africastalking.AfricasTalkingType",
-    "temba.channels.types.blackmyna.BlackmynaType",
-    "temba.channels.types.bongolive.BongoLiveType",
-    "temba.channels.types.burstsms.BurstSMSType",
-    "temba.channels.types.chikka.ChikkaType",
-    "temba.channels.types.clickatell.ClickatellType",
-    "temba.channels.types.clickmobile.ClickMobileType",
-    "temba.channels.types.clicksend.ClickSendType",
-    "temba.channels.types.dartmedia.DartMediaType",
-    "temba.channels.types.dmark.DMarkType",
+    # "temba.channels.types.blackmyna.BlackmynaType",
+    # "temba.channels.types.bongolive.BongoLiveType",
+    # "temba.channels.types.burstsms.BurstSMSType",
+    # "temba.channels.types.chikka.ChikkaType",
+    # "temba.channels.types.clickatell.ClickatellType",
+    # "temba.channels.types.clickmobile.ClickMobileType",
+    # "temba.channels.types.clicksend.ClickSendType",
+    # "temba.channels.types.dartmedia.DartMediaType",
+    # "temba.channels.types.dmark.DMarkType",
     "temba.channels.types.external.ExternalType",
     "temba.channels.types.facebook.FacebookType",
     "temba.channels.types.facebookapp.FacebookAppType",
     "temba.channels.types.firebase.FirebaseCloudMessagingType",
-    "temba.channels.types.freshchat.FreshChatType",
-    "temba.channels.types.globe.GlobeType",
-    "temba.channels.types.highconnection.HighConnectionType",
-    "temba.channels.types.hormuud.HormuudType",
-    "temba.channels.types.hub9.Hub9Type",
-    "temba.channels.types.i2sms.I2SMSType",
-    "temba.channels.types.infobip.InfobipType",
-    "temba.channels.types.jasmin.JasminType",
-    "temba.channels.types.jiochat.JioChatType",
-    "temba.channels.types.junebug.JunebugType",
-    "temba.channels.types.kaleyra.KaleyraType",
-    "temba.channels.types.kannel.KannelType",
-    "temba.channels.types.line.LineType",
-    "temba.channels.types.m3tech.M3TechType",
-    "temba.channels.types.macrokiosk.MacrokioskType",
-    "temba.channels.types.mtarget.MtargetType",
-    "temba.channels.types.mblox.MbloxType",
-    "temba.channels.types.messangi.MessangiType",
-    "temba.channels.types.novo.NovoType",
-    "temba.channels.types.playmobile.PlayMobileType",
-    "temba.channels.types.plivo.PlivoType",
-    "temba.channels.types.redrabbit.RedRabbitType",
-    "temba.channels.types.shaqodoon.ShaqodoonType",
-    "temba.channels.types.smscentral.SMSCentralType",
-    "temba.channels.types.start.StartType",
-    "temba.channels.types.telegram.TelegramType",
-    "temba.channels.types.telesom.TelesomType",
-    "temba.channels.types.thinq.ThinQType",
-    "temba.channels.types.twiml_api.TwimlAPIType",
-    "temba.channels.types.twitter.TwitterType",
-    "temba.channels.types.twitter_legacy.TwitterLegacyType",
-    "temba.channels.types.verboice.VerboiceType",
-    "temba.channels.types.viber_public.ViberPublicType",
-    "temba.channels.types.vk.VKType",
-    "temba.channels.types.wavy.WavyType",
-    "temba.channels.types.wechat.WeChatType",
-    "temba.channels.types.yo.YoType",
-    "temba.channels.types.zenvia.ZenviaType",
-    "temba.channels.types.zenvia_sms.ZenviaSMSType",
+    # "temba.channels.types.freshchat.FreshChatType",
+    # "temba.channels.types.globe.GlobeType",
+    # "temba.channels.types.highconnection.HighConnectionType",
+    # "temba.channels.types.hormuud.HormuudType",
+    # "temba.channels.types.hub9.Hub9Type",
+    # "temba.channels.types.i2sms.I2SMSType",
+    # "temba.channels.types.infobip.InfobipType",
+    # "temba.channels.types.jasmin.JasminType",
+    # "temba.channels.types.jiochat.JioChatType",
+    # "temba.channels.types.junebug.JunebugType",
+    # "temba.channels.types.kaleyra.KaleyraType",
+    # "temba.channels.types.kannel.KannelType",
+    # "temba.channels.types.line.LineType",
+    # "temba.channels.types.m3tech.M3TechType",
+    # "temba.channels.types.macrokiosk.MacrokioskType",
+    # "temba.channels.types.mtarget.MtargetType",
+    # "temba.channels.types.mblox.MbloxType",
+    # "temba.channels.types.messangi.MessangiType",
+    # "temba.channels.types.novo.NovoType",
+    # "temba.channels.types.playmobile.PlayMobileType",
+    # "temba.channels.types.plivo.PlivoType",
+    # "temba.channels.types.redrabbit.RedRabbitType",
+    # "temba.channels.types.shaqodoon.ShaqodoonType",
+    # "temba.channels.types.smscentral.SMSCentralType",
+    # "temba.channels.types.start.StartType",
+     "temba.channels.types.telegram.TelegramType",
+    # "temba.channels.types.telesom.TelesomType",
+    # "temba.channels.types.thinq.ThinQType",
+    # "temba.channels.types.twiml_api.TwimlAPIType",
+    # "temba.channels.types.twitter.TwitterType",
+    # "temba.channels.types.twitter_legacy.TwitterLegacyType",
+    # "temba.channels.types.verboice.VerboiceType",
+    # "temba.channels.types.viber_public.ViberPublicType",
+    # "temba.channels.types.vk.VKType",
+    # "temba.channels.types.wavy.WavyType",
+    # "temba.channels.types.wechat.WeChatType",
+    # "temba.channels.types.yo.YoType",
+    # "temba.channels.types.zenvia.ZenviaType",
+    # "temba.channels.types.zenvia_sms.ZenviaSMSType",
     "temba.channels.types.android.AndroidType",
-    "temba.channels.types.discord.DiscordType",
-    "temba.channels.types.rocketchat.RocketChatType",
+    # "temba.channels.types.discord.DiscordType",
+    # "temba.channels.types.rocketchat.RocketChatType",
     "temba.channels.types.instagram.InstagramType",
 ]
 
@@ -1228,9 +1231,23 @@ ZENDESK_CLIENT_SECRET = os.environ.get("ZENDESK_CLIENT_SECRET", "")
 #       on https://developers.facebook.com/docs/messenger-platform/webhook#setup
 #
 # -----------------------------------------------------------------------------------
-FACEBOOK_APPLICATION_ID = os.environ.get("FACEBOOK_APPLICATION_ID", "")
-FACEBOOK_APPLICATION_SECRET = os.environ.get("FACEBOOK_APPLICATION_SECRET", "")
-FACEBOOK_WEBHOOK_SECRET = os.environ.get("FACEBOOK_WEBHOOK_SECRET", "")
+FACEBOOK_APPLICATION_ID = os.environ.get("FACEBOOK_APPLICATION_ID", "MISSING_FACEBOOK_APPLICATION_ID")
+FACEBOOK_APPLICATION_SECRET = os.environ.get("FACEBOOK_APPLICATION_SECRET", "MISSING_FACEBOOK_APPLICATION_SECRET")
+FACEBOOK_WEBHOOK_SECRET = os.environ.get("FACEBOOK_WEBHOOK_SECRET", "MISSING_FACEBOOK_WEBHOOK_SECRET")
+
+WHATSAPP_ADMIN_SYSTEM_USER_ID = os.environ.get(
+    "WHATSAPP_ADMIN_SYSTEM_USER_ID", "MISSING_WHATSAPP_ADMIN_SYSTEM_USER_ID"
+)
+WHATSAPP_ADMIN_SYSTEM_USER_TOKEN = os.environ.get(
+    "WHATSAPP_ADMIN_SYSTEM_USER_TOKEN", "MISSING_WHATSAPP_ADMIN_SYSTEM_USER_TOKEN"
+)
+WHATSAPP_FACEBOOK_BUSINESS_ID = os.environ.get(
+    "WHATSAPP_FACEBOOK_BUSINESS_ID", "MISSING_WHATSAPP_FACEBOOK_BUSINESS_ID"
+)
+
+ALLOWED_WHATSAPP_FACEBOOK_BUSINESS_IDS = [
+    os.environ.get("WHATSAPP_FACEBOOK_BUSINESS_ID", "MISSING_WHATSAPP_FACEBOOK_BUSINESS_ID")
+]
 
 
 # -----------------------------------------------------------------------------------

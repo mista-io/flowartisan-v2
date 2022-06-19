@@ -1558,7 +1558,7 @@ table.padded td {
     padding: 0.75rem
   }
 
-table.list{
+table.list {
   --tw-bg-opacity: 1;
   background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
   border-radius: 0.5rem;
@@ -1568,16 +1568,10 @@ table.list{
   width: 100%;
 }
 
-table.list.sticky th {
-      position: sticky;
-      top: 0;
-    }
-
 table.list.scrolled {
     border-radius: 0 !important;
     --tw-shadow: 0 0 #0000 !important;
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
-    overflow: scroll !important;
   }
 
 table.list tr:first-child td {
@@ -1593,6 +1587,7 @@ table.list tr td temba-checkbox {
         --icon-color: #ddd;
         width: 18px;
         height: 18px;
+        margin-right: -8px;
       }
 
 table.list.light thead tr th {
@@ -1643,6 +1638,7 @@ table.list.expanded.lined {
       border-color: rgba(226, 226, 226, var(--tw-border-opacity));
       border-style: solid;
       border-right-width: 0;
+      border-bottom-width: 0;
       border-left-width: 0;
     }
 
@@ -1678,7 +1674,7 @@ table.list th {
 table.list.lined td {
       --tw-border-opacity: 1;
       border-color: rgba(237, 237, 237, var(--tw-border-opacity));
-      border-bottom-width: 1px;
+      border-top-width: 1px;
     }
 
 table.list tbody tr.warning {
@@ -1773,6 +1769,7 @@ table.list.selectable tbody tr.checked td {
 .lp-frame .left {
     margin-right: 1.25rem;
     width: 16rem;
+    background: #343fb305;
   }
 
 .lp-frame .left .lp-nav.upper {
@@ -1886,22 +1883,22 @@ code {
 }
 
 .card {
-  --tw-bg-opacity: 1;
-  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
-  border-radius: 0.5rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  overflow: hidden;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  transition-duration: 200ms;
+    --tw-bg-opacity: 1;
+    background-color: #f9f9f9;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    transition-duration: 200ms;
 }
 
 .card .bleed-t {
@@ -2021,7 +2018,7 @@ code {
       background-color: rgba(237, 237, 237, var(--tw-bg-opacity));
       cursor: pointer;
       --tw-text-opacity: 1;
-      color: rgba(113, 113, 113, var(--tw-text-opacity));
+      color: rgba(101 192 116 / 36%, var(--tw-text-opacity));
       transition: all 200ms ease-in-out;
       font-size: 30px;
       flex-basis: 90px;
@@ -2306,12 +2303,6 @@ code {
   100% {
     transform: scale(1);
   }
-}
-
-.disabled {
-  --tw-text-opacity: 1;
-  color: rgba(226, 226, 226, var(--tw-text-opacity));
-  --icon-color: #ccc;
 }
 
 .space-y-0 > :not([hidden]) ~ :not([hidden]) {
@@ -11230,7 +11221,7 @@ code {
   --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgba(59, 130, 246, 0.5);
+  --tw-ring-color: rgb(101 192 116/40%);
   --tw-ring-offset-shadow: 0 0 #0000;
   --tw-ring-shadow: 0 0 #0000;
 }
@@ -12750,10 +12741,9 @@ code {
 }
 
 .text-gray-100 {
-  --tw-text-opacity: 1;
-  color: rgba(247, 247, 247, var(--tw-text-opacity));
+    --tw-text-opacity: 1;
+    color:#65c07466;
 }
-
 .text-gray-200 {
   --tw-text-opacity: 1;
   color: rgba(237, 237, 237, var(--tw-text-opacity));

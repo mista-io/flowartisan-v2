@@ -1,18 +1,36 @@
 @font-face {
-  font-family: 'temba';
+  font-family: 'temba,untitled-font-2';
   src:  url('fonts/temba.eot?m51sn0');
   src:  url('fonts/temba.eot?m51sn0#iefix') format('embedded-opentype'),
     url('fonts/temba.ttf?m51sn0') format('truetype'),
     url('fonts/temba.woff?m51sn0') format('woff'),
     url('fonts/temba.svg?m51sn0#temba') format('svg');
+    
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
+
+@font-face {
+    font-family: 'temba,untitled-font-2';
+  src:url("fonts/untitled-font-2.eot");
+  src:url("fonts/untitled-font-2.eot?#iefix") format("embedded-opentype"),
+    url("fonts/untitled-font-2.woff") format("woff"),
+    url("fonts/untitled-font-2.ttf") format("truetype"),
+    url("fonts/untitled-font-2.svg#untitled-font-2") format("svg");
+
+    
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+
+}
+
+
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'temba' !important;
+  font-family: 'temba,untitled-font-2' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -28,6 +46,10 @@
 .icon-instagram:before {
   content: "\e900";
 }
+.icon-mista-icon:before {
+  content: "\61";
+}
+
 .icon-menu-2:before {
   content: "\e091";
 }
